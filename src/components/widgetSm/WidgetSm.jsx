@@ -1,87 +1,37 @@
 import "./widgetSm.css";
-import { Visibility } from "@material-ui/icons";
+import React from "react";
+
+// Import react-circular-progressbar module and styles
+import {
+  CircularProgressbar} from "react-circular-progressbar";
+import "react-circular-progressbar/dist/styles.css";
+
+// Animation
+import ChangingProgressProvider from "./ChangingProgressProvider";
+
+// Radial separators
+
+const percentage = 66;
+
 
 export default function WidgetSm() {
   return (
-    <div className="widgetSm">
-      <span className="widgetSmTitle">New Join Members</span>
-      <ul className="widgetSmList">
-        <li className="widgetSmListItem">
-          <img
-            src="https://images.pexels.com/photos/3992656/pexels-photo-3992656.png?auto=compress&cs=tinysrgb&dpr=2&w=500"
-            alt=""
-            className="widgetSmImg"
-          />
-          <div className="widgetSmUser">
-            <span className="widgetSmUsername">Anna Keller</span>
-            <span className="widgetSmUserTitle">Software Engineer</span>
-          </div>
-          <button className="widgetSmButton">
-            <Visibility className="widgetSmIcon" />
-            Display
-          </button>
-        </li>
-        <li className="widgetSmListItem">
-          <img
-            src="https://images.pexels.com/photos/3992656/pexels-photo-3992656.png?auto=compress&cs=tinysrgb&dpr=2&w=500"
-            alt=""
-            className="widgetSmImg"
-          />
-          <div className="widgetSmUser">
-            <span className="widgetSmUsername">Anna Keller</span>
-            <span className="widgetSmUserTitle">Software Engineer</span>
-          </div>
-          <button className="widgetSmButton">
-            <Visibility className="widgetSmIcon" />
-            Display
-          </button>
-        </li>
-        <li className="widgetSmListItem">
-          <img
-            src="https://images.pexels.com/photos/3992656/pexels-photo-3992656.png?auto=compress&cs=tinysrgb&dpr=2&w=500"
-            alt=""
-            className="widgetSmImg"
-          />
-          <div className="widgetSmUser">
-            <span className="widgetSmUsername">Anna Keller</span>
-            <span className="widgetSmUserTitle">Software Engineer</span>
-          </div>
-          <button className="widgetSmButton">
-            <Visibility className="widgetSmIcon" />
-            Display
-          </button>
-        </li>
-        <li className="widgetSmListItem">
-          <img
-            src="https://images.pexels.com/photos/3992656/pexels-photo-3992656.png?auto=compress&cs=tinysrgb&dpr=2&w=500"
-            alt=""
-            className="widgetSmImg"
-          />
-          <div className="widgetSmUser">
-            <span className="widgetSmUsername">Anna Keller</span>
-            <span className="widgetSmUserTitle">Software Engineer</span>
-          </div>
-          <button className="widgetSmButton">
-            <Visibility className="widgetSmIcon" />
-            Display
-          </button>
-        </li>
-        <li className="widgetSmListItem">
-          <img
-            src="https://images.pexels.com/photos/3992656/pexels-photo-3992656.png?auto=compress&cs=tinysrgb&dpr=2&w=500"
-            alt=""
-            className="widgetSmImg"
-          />
-          <div className="widgetSmUser">
-            <span className="widgetSmUsername">Anna Keller</span>
-            <span className="widgetSmUserTitle">Software Engineer</span>
-          </div>
-          <button className="widgetSmButton">
-            <Visibility className="widgetSmIcon" />
-            Display
-          </button>
-        </li>
-      </ul>
-    </div>
+    <div className="widgetSm" >      
+      <ChangingProgressProvider values={[0, 20, 40, 60, 80, 100]}>
+        {percentage => (
+          <CircularProgressbar value={percentage} text={`${percentage}%`} />
+        )}
+      </ChangingProgressProvider>
+      <div className="stats">
+        30 days Performance 
+      </div>
+      <div className="target">
+        Weekly Target
+      </div>
+      <div className="target1">
+        Monthly Target
+      </div>
+      </div>
+
   );
 }

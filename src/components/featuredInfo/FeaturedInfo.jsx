@@ -1,39 +1,64 @@
 import "./featuredInfo.css";
-import { ArrowDownward, ArrowUpward } from "@material-ui/icons";
+import logo from "../pictures/php-logo.jpg";
+import logo1 from "../pictures/python-logo.png";
+import logo2 from "../pictures/digitalmarket.jpg";
+import logo3 from "../pictures/figma-logo-2_4x.webp";
 
 export default function FeaturedInfo() {
   return (
+    <div>
+    <div className="topheader">Learn New Skills</div>
     <div className="featured">
       <div className="featuredItem">
-        <span className="featuredTitle">Revanue</span>
+        <div>
+          <img src={logo} className="img" alt="" />
+        </div>
         <div className="featuredMoneyContainer">
-          <span className="featuredMoney">$2,415</span>
+          <span className="featuredMoney">PHP Development</span>
           <span className="featuredMoneyRate">
-            -11.4 <ArrowDownward  className="featuredIcon negative"/>
+            12+ Videos 
           </span>
         </div>
-        <span className="featuredSub">Compared to last month</span>
+        <button className="featuredSub">Learn More </button>
       </div>
       <div className="featuredItem">
-        <span className="featuredTitle">Sales</span>
+      <div>
+          <img src={logo1} className="img" alt="" />
+        </div>
         <div className="featuredMoneyContainer">
-          <span className="featuredMoney">$4,415</span>
+          <span className="featuredMoney">Python Programming</span>
           <span className="featuredMoneyRate">
-            -1.4 <ArrowDownward className="featuredIcon negative"/>
+            15+ Videos 
           </span>
         </div>
-        <span className="featuredSub">Compared to last month</span>
+        <button className="featuredSub">Learn More </button>
       </div>
       <div className="featuredItem">
-        <span className="featuredTitle">Cost</span>
+      <div>
+          <img src={logo2} className="img" alt="" />
+        </div>
         <div className="featuredMoneyContainer">
-          <span className="featuredMoney">$2,225</span>
+          <span className="featuredMoney">Digital Marketing</span>
           <span className="featuredMoneyRate">
-            +2.4 <ArrowUpward className="featuredIcon"/>
+            20+ Videos 
           </span>
         </div>
-        <span className="featuredSub">Compared to last month</span>
+        <button className="featuredSub">Learn More </button>
       </div>
+      <div className="featuredItem">
+      <div>
+          <img src={logo3} className="img" alt="" />
+        </div>
+        <br></br><br></br>
+        <div className="featuredMoneyContainer">
+          <span className="featuredMoney">Figma with UI/UX Design</span>
+          <span className="featuredMoneyRate">
+            13+ Videos 
+          </span>
+        </div>
+        <button className="featuredSub">Learn More </button>
+      </div>
+    </div>
     </div>
   );
 }
